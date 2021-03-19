@@ -49,6 +49,17 @@ dataSet = str(yesterday) + '  ' + str(errorValue)
 print(dataSet + '\n')
 print("nowData", todayData,'won', ' | ', 'futureData', futureData, 'won', ' | ', 'errorValue', errorValue, 'won') 
 
-model.plot(forecast) 
-model.plot_components(forecast)
-mpl.show()
+result = pd.DataFrame(
+    {
+        'nowData': [todayData],
+        'futureData': [futureData],
+        'errorValue': [errorValue]
+    }
+)
+
+#model.plot(forecast) 
+#model.plot_components(forecast)
+#mpl.show()
+#result.to_excel('StockDataFrame')
+print(result)
+
